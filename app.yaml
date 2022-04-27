@@ -6,7 +6,7 @@ handlers:
   - url: /
     static_files: dist/wi-app/index.html
     upload: dist/(.*)/(.*)
-  -url: /
+  - url: /
     static_dir: dist/wi-app
 
 skip_files:
@@ -18,4 +18,3 @@ skip_files:
   - ^(.*/)?\.*\.md$
   - ^(.*/)?\.*\.yaml$
   - ^LICENSE
-
