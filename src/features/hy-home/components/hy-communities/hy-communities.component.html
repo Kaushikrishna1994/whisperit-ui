@@ -1,0 +1,17 @@
+<div>
+    <h2>Communities</h2>
+
+    <button class="hy-left-btns" mat-stroked-button routerLink="/communities/create">
+        <mat-icon class="icon" aria-hidden="false">post_add</mat-icon>
+        Create New Community
+    </button>
+    <div class="communities">
+        <div class="communities-list">
+            <app-hy-communities-list (selectCommunity)="communitySelectChange($event)"></app-hy-communities-list>
+        </div>
+        <div class="communities-chat">
+            <app-hy-communities-chat [community]="selectedCommunity" [chats]="chats">
+            </app-hy-communities-chat>
+        </div>
+    </div>
+</div>

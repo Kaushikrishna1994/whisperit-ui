@@ -1,0 +1,28 @@
+<div>
+    <div style="display: flex; justify-content: space-between">
+        <h3>Communities</h3>
+        <button (click)="communitySelected(currCommunity)" mat-button color="primary">
+            <mat-icon>refresh</mat-icon>
+        </button>
+    </div>
+
+    <hr style=" border-top: 2px solid #c6c6c6;" />
+    <ng-container *ngFor="let community of communities">
+        <div style="display: flex; justify-content: space-between;margin: 0.1em; border-radius: 20px"
+            [ngStyle]="{'background-color': (currCommunity.id===community.id) ? '#c5fff3' : '#ffffff'}">
+            <a (click)="communitySelected(community)" style="width: 100%;text-align: left" mat-button color="primary">
+                <mat-icon class="icon" aria-hidden="false">forum</mat-icon>
+                {{community.title}}
+            </a>
+
+            <a (click)="inviteFriends(community)" mat-icon-button color="primary">
+                <mat-icon class="icon" aria-hidden="false">add</mat-icon>
+            </a>
+
+            <a (click)="communityInfo(community)" style="margin-left:0.5em" mat-icon-button color="primary">
+                <mat-icon class="icon" aria-hidden="false">info</mat-icon>
+            </a>
+
+        </div>
+    </ng-container>
+</div>

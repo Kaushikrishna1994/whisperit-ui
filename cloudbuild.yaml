@@ -1,0 +1,17 @@
+steps:
+  # Steps to build a docker image for go-microservice, push it to container registry and deploy it to cloud run.
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["install"]
+  - name: "gcr.io/cloud-builders/npm"
+    args: ["run", "build", "--prod", "gcr.io/whisper-it-348515/whispetit-ui"]
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "app",
+        "deploy",
+        "--version=prod",
+        "gcr.io/whisper-it-348515/whispetit-ui",
+      ]
+
+images:
+  - gcr.io/massive-jet-342201/whispetit-ui

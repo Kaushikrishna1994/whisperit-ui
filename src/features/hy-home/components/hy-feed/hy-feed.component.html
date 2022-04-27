@@ -1,0 +1,23 @@
+<div>
+  <h2>My Feed</h2>
+  <a class="hy-left-btns" mat-raised-button routerLink="/create/post" color="primary">
+    <mat-icon class="icon" aria-hidden="false">post_add</mat-icon>
+    Add Feed
+  </a>
+
+  <button (click)="getAllPosts()" mat-button color="primary">
+    <mat-icon>refresh</mat-icon>
+  </button>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <div class="container">
+    <div class="friends-list">
+      <div style="margin: 0.5em 0;" *ngFor="let post of posts">
+        <hy-post-card [opened]="post.id === openId" [comment]="post.id === openId?comment:''"
+          (commentType)="commentType($event)" [post]="post" (commentClicked)="commentClicked($event)"></hy-post-card>
+      </div>
+    </div>
+  </div>
+</div>

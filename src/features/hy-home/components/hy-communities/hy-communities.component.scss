@@ -1,0 +1,18 @@
+.communities {
+  display: flex;
+  margin-top: 2em;
+  min-height: 60vh;
+  max-height: 60vh;
+
+  .communities-list {
+    width: 30%;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding-left: 1em;
+  }
+
+  .communities-chat {
+    width: 70%;
+    background-color: #e6fdfd;
+  }
+}

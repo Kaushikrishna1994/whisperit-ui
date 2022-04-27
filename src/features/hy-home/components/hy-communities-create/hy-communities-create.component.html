@@ -1,0 +1,28 @@
+<div>
+    <h2>Create Community</h2>
+    <br>
+    <br>
+    <br>
+    <div>
+
+        <div class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Title</mat-label>
+                <input matInput [(ngModel)]="community.title">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Description</mat-label>
+                <textarea [(ngModel)]="community.description" matInput
+                    placeholder="Ex. Full Stack Community with newest technologies"></textarea>
+            </mat-form-field>
+
+            <a mat-raised-button color="primary" (click)="createCommunity()">
+                <mat-icon class="icon" aria-hidden="false">post_add</mat-icon>
+                Create Community
+            </a>
+        </div>
+
+
+    </div>
+</div>
