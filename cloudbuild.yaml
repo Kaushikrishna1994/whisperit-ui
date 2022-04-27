@@ -3,15 +3,6 @@ steps:
   - name: "gcr.io/cloud-builders/npm"
     args: ["install"]
   - name: "gcr.io/cloud-builders/npm"
-    args: ["run", "build", "--prod", "gcr.io/whisper-it-348515/whispetit-ui"]
+    args: ["run", "build", "--prod"]
   - name: "gcr.io/cloud-builders/gcloud"
-    args:
-      [
-        "app",
-        "deploy",
-        "--version=prod",
-        "gcr.io/whisper-it-348515/whispetit-ui",
-      ]
-
-images:
-  - gcr.io/massive-jet-342201/whispetit-ui
+    args: ["app", "deploy", "--version=prod"]
